@@ -1,0 +1,6 @@
+[submodule "private-testnet"]
+	path = private-testnet
+	url = git@github.com:minswap/private-alonzo-testnet.git
+[submodule "exunits-calculator"]
+	path = exunits-calculator
+	url = git@github.com:minswap/exunits-calculator.git

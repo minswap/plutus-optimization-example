@@ -1,0 +1,69 @@
+Cabal-Version:      2.4
+Name:               plutus-optimization
+Version:            0.1.0.0
+Author:              Minswap Labs
+Maintainer:          contact@minswap.org
+Build-Type:          Simple
+Copyright:           © 2021 Minswap Labs
+License:             GPL-3.0-only
+License-files:       LICENSE
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     OnChain
+                       CustomContexts
+  build-depends:       aeson
+                     , base ^>= 4.14.1.0
+                     , containers
+                     , plutus-core
+                     , plutus-ledger
+                     , plutus-ledger-api
+                     , plutus-tx
+                     , plutus-tx-plugin
+                     , cardano-api
+                     , cardano-ledger-alonzo
+                     , text
+                     , lens -any
+                     , freer-simple
+                     , prettyprinter
+                     , bytestring
+                     , regex-tdfa ^>= 1.3.1.0
+                     , req ^>= 3.9.0
+                     , uuid
+                     , serialise ^>= 0.2.3.0
+                     , hex-text
+                     , pretty-simple
+  default-language:    Haskell2010
+  default-extensions: ExplicitForAll ScopedTypeVariables
+                        DeriveGeneric StandaloneDeriving DeriveLift
+                        GeneralizedNewtypeDeriving DeriveFunctor DeriveFoldable
+                        DeriveTraversable MultiParamTypeClasses
+  ghc-options: -Wall -Wnoncanonical-monad-instances
+                -Wincomplete-uni-patterns -Wincomplete-record-updates
+                -Wredundant-constraints -Widentities
+                -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
+
+executable main
+  hs-source-dirs:       src
+  main-is:              Main.hs
+  ghc-options:          -threaded -rtsopts "-with-rtsopts=-T"
+                        -Wall -Wnoncanonical-monad-instances
+                        -Wincomplete-uni-patterns -Wincomplete-record-updates
+                        -Wredundant-constraints -Widentities
+                        -fobject-code -fno-ignore-interface-pragmas -fno-omit-interface-pragmas
+  build-depends:        aeson
+                      , cardano-api
+                      , base ^>= 4.14.1.0
+                      , plutus-core
+                      , plutus-ledger
+                      , plutus-ledger-api
+                      , cardano-ledger-alonzo
+                      , plutus-tx
+                      , plutus-tx-plugin
+                      , cardano-api
+                      , bytestring
+                      , hex-text
+                      , plutus-optimization
+                      , pretty-simple
+                      , text
+                      , serialise ^>= 0.2.3.0
