@@ -129,7 +129,6 @@ mkValidator' rawDatum rawRedeemer rawContext =
                           isJust (CC.txOutDatumHash o)
                       ] of
       [o] -> o
-      _ -> error ()
 
     !outVal = CC.txOutValue ownOutput
     !amountA = assetClassValueOf outVal mdCoinA

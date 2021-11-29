@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 export PATH=$PWD/private-testnet/bin:$PATH
 export CARDANO_NODE_SOCKET_PATH=$PWD/private-testnet/sockets/node-pool1.sock
 faucetaddr=$(cardano-cli address build --payment-verification-key-file private-testnet/shelley/utxo-keys/utxo1.vkey --testnet-magic 42)
@@ -28,7 +30,7 @@ cardano-cli transaction submit --testnet-magic 42 --tx-file tx_optimized.signed
 
 sleep 30
 
-txId=01bb7373407d86de236fe9c009dee78ab8ac45922574ee4c547925dcf89b55c0
+txId=813e23afd33cc4f5a3db500ab871170e66b804f91343b5098358186d2324df5b
 cardano-cli transaction build \
   --alonzo-era \
   --change-address "$faucetaddr" \

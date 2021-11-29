@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
 export PATH=$PWD/private-testnet/bin:$PATH
 export CARDANO_NODE_SOCKET_PATH=$PWD/private-testnet/sockets/node-pool1.sock
 faucetaddr=$(cardano-cli address build --payment-verification-key-file private-testnet/shelley/utxo-keys/utxo1.vkey --testnet-magic 42)
